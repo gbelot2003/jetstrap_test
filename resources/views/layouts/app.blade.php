@@ -7,6 +7,9 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/dashboard.css') }}">
 
@@ -16,74 +19,87 @@
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ mix('js/dashboard.js') }}" defer></script>
     </head>
-    <body class="c-app font-sans antialiased">
-        <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
-            <div class="c-sidebar-brand">
-                <a href="/">
-                    <x-jet-application-mark class="c-sidebar-brand-minimized" width="36" />
-                    <x-jet-application-mark class="c-sidebar-brand-full" width="36" />
+    <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed font-sans antialiased">
+        <div class="wrapper">
+            
+            <!-- Navbar -->
+            @livewire('navigation-menu')
+            <!-- /.navbar -->
+
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar sidebar-dark-warning elevation-2">
+                <!-- Brand Logo -->
+                <a href="/" class="brand-link">
+                    <x-jet-application-mark width="36" class="brand-image img-circle elevation-1" style="opacity: .8" />
+                    <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
                 </a>
-            </div>
 
-            <ul class="c-sidebar-nav">
-                {{ $sidebar ?? '' }}
-            </ul>
-
-            <button class="c-sidebar-minimizer c-class-toggler" type="button" data-bs-target="_parent" data-class="c-sidebar-minimized"></button>
-        </div>
-        <div class="c-wrapper">
-            <header class="c-header c-header-light c-header-fixed c-header-with-subheader">
-                <button class="c-header-toggler c-class-toggler d-lg-none me-auto" type="button" data-bs-target="#sidebar" data-class="c-sidebar-show">
-                    <span class="c-header-toggler-icon"></span>
-                </button>
-
-                <button class="c-header-toggler c-class-toggler ms-3 d-md-down-none" type="button" data-bs-target="#sidebar" data-class="c-sidebar-lg-show" responsive="true">
-                    <span class="c-header-toggler-icon"></span>
-                </button>
-
-                <ul class="c-header-nav d-md-down-none">
-                    <li class="c-header-nav-item px-3">
-                        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
-                        </x-jet-nav-link>
-                    </li>
-                </ul>
-
-                @livewire('navigation-menu')
-
-                <div class="c-subheader px-3 py-3">
-                    <div class="container">
-                        {{ $header }}
+                <!-- Sidebar -->
+                <div class="sidebar">
+                    <!-- Sidebar user (optional) -->
+                    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                        @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                            <div class="image">
+                                <img src="{{ Auth::user()->profile_photo_url }}" class="img-circle elevation-1" alt="{{ Auth::user()->name }}">
+                            </div>
+                        @endif
+                        <div class="info">
+                            <a href="{{ route('profile.show') }}" class="d-block">{{ Auth::user()->name }}</a>
+                        </div>
                     </div>
+
+                    <!-- Sidebar Menu -->
+                    <nav class="mt-2">
+                        <ul class="nav nav-pills nav-sidebar flex-column nav-legacy" data-widget="treeview" role="menu" data-accordion="false">
+                            <!-- Add icons to the links using the .nav-icon class
+                                 with font-awesome or any other icon font library -->
+
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
                 </div>
-            </header>
+                <!-- /.sidebar -->
+            </aside>
 
-          <div class="c-body">
-            <main class="c-main">
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col">
+                                <h1>{{ $header }}</h1>
+                            </div>
+                        </div>
+                    </div><!-- /.container-fluid -->
+                </section>
 
-              <div class="container">
-                  <div class="row fade-in">
-                      <div class="col">
-                          {{ $slot }}
-                      </div>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col">
+                                {{ $slot }}
+                            </div>
 
-                      @if (isset($aside))
-                          <div class="col-lg-3">
-                              {{ $aside ?? '' }}
-                          </div>
-                      @endif
-                  </div>
-              </div>
+                            @if (isset($aside))
+                                <div class="col-lg-3">
+                                    {{ $aside }}
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                </section>
+                <!-- /.content -->
+            </div>
+            <!-- /.content-wrapper -->
 
-            </main>
-
-            <footer class="c-footer">
-              <div>
-                  <a href="https://jetstream.laravel.com/1.x/introduction.html">Jetstream</a> © 2020 Laravel.
-              </div>
-              <div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/">CoreUI</a></div>
+            <footer class="main-footer">
+                <div class="float-right d-none d-sm-block">
+                    <b><a href="https://jetstream.laravel.com">Jetstream</a></b>
+                </div>
+                <strong>Powered by</strong> <a href="https://adminlte.io">AdminLTE</a>
             </footer>
-          </div>
         </div>
 
         @stack('modals')
