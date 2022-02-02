@@ -8,10 +8,16 @@
         <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
             {{ __('Dashboard') }}
         </x-jet-nav-link>
+
+        <!-- Links here -->
+        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('other')">
+            {{ __('Other') }}
+        </x-jet-nav-link>
+        <!-- Links here -->
     </ul>
 
     <!-- Right navbar links -->
-    <ul class="navbar-nav ms-auto">
+    <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
         <!-- Teams Dropdown -->
         @if (Laravel\Jetstream\Jetstream::hasTeamFeatures())
             <x-jet-dropdown id="teamManagementDropdown">
@@ -53,6 +59,12 @@
                 </x-slot>
             </x-jet-dropdown>
         @endif
+
+        <!-- Links here -->
+
+
+
+        <!-- Links here -->
 
     <!-- Authentication Links -->
         @auth
