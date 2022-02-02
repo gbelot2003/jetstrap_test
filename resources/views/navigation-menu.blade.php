@@ -10,9 +10,7 @@
         </x-jet-nav-link>
 
         <!-- Links here -->
-        <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('other')">
-            {{ __('Other') }}
-        </x-jet-nav-link>
+        
         <!-- Links here -->
     </ul>
 
@@ -62,7 +60,9 @@
 
         <!-- Links here -->
 
-
+        <!-- <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('other')">
+            {{ __('Other') }}
+        </x-jet-nav-link>-->
 
         <!-- Links here -->
 
