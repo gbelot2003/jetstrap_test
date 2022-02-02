@@ -1,7 +1,7 @@
 <h2>Accounts</h2>
 
 <div>
-    <form action="/" method="post">
+    <form action="{{ route("account.store") }}" method="post">
         @csrf
 
         <p>
@@ -28,10 +28,22 @@
     </form>
 </div>
 <hr />
-<ul>
-    @forelse ($accounts as $row)
-        <li>{{ $row->code }}| {{ $row->name }}</li>
-    @empty
-        <p>No hay cuentas creadas</p>
-    @endforelse
-</ul>
+<table>
+    <thead>
+        <th>Code</th>
+        <th>Name</th>
+    </thead>
+    <tbody>
+        @foreach ($accounts as $row)
+            @foreach ($row->childs as $child)
+                <tr>
+
+                    <td>{{ $child->code }}</td>
+                    <td>{{ $child->name }}</td>
+
+                </tr>
+            @endforeach
+        @endforeach
+
+    </tbody>
+</table>

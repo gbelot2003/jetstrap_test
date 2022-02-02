@@ -9,6 +9,7 @@ class Account extends Model
 {
     use HasFactory;
 
+    
     protected $fillable = ['name', 'code', 'reference_id'];
 
 
@@ -21,6 +22,12 @@ class Account extends Model
     public function parent()
     {
         return $this->belongsTo(Account::class, 'reference_id');
+    }
+
+
+    public function books()
+    {
+        return $this->hasMany(Book::class, 'account_id');
     }
 
 }
