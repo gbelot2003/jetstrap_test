@@ -35,29 +35,17 @@
 
                             <li class="nav-item">
                                 <a href="/docs/3.1//components" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
+                                    <i class="nav-icon fas fa-user"></i>
                                     <p>
-                                        Components
+                                        Conf. de Usuarios
                                         <i class="right fas fa-angle-left"></i>
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
                                     <li class="nav-item">
-                                        <a href="/docs/3.1//components/main-header.html" class="nav-link">
+                                        <a href="{{ route('users.index') }}" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Main Header</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="/docs/3.1//components/main-sidebar.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Main Sidebar</p>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a href="/docs/3.1//components/control-sidebar.html" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Control Sidebar</p>
+                                            <p>Listado de Usuarios</p>
                                         </a>
                                     </li>
                                 </ul>
