@@ -19,9 +19,6 @@ Route::get('/', function(){
     return redirect()->route("login");
 });
 
-//Route::get('/', [AccountController::class, 'index'])->name('account.index');
-
-//Route::post('/', [AccountController::class, 'store'])->name('account.store');
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
@@ -29,5 +26,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function (){
+
+    Route::get('cuentas', [AccountController::class, 'index'])->name('account.index');
+    Route::post('cuentas', [AccountController::class, 'store'])->name('account.store');
+
+    
+
     Route::get('users', [UserController::class, 'index'])->name('users.index');
 });
