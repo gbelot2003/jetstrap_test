@@ -15,9 +15,8 @@ class CreateTradesTable extends Migration
     {
         Schema::create('trades', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('reference_id');
+            $table->bigInteger('book_id');
             $table->bigInteger('account_id');
-            $table->text('description');
             $table->decimal('credit', 8, 2);
             $table->decimal('debit', 8, 2);
             $table->timestamps();

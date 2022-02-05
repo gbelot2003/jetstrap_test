@@ -10,11 +10,7 @@ class Book extends Model
     use HasFactory;
 
     
-    protected $fillable = ['account_id', 'description', 'debit', 'credit'];
 
     
-    public function account()
-    {
-        return $this->belongsTo(Account::class, 'account_id');
-    }
+  
 }

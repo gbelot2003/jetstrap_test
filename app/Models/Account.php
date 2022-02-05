@@ -24,10 +24,10 @@ class Account extends Model
         return $this->belongsTo(Account::class, 'reference_id');
     }
 
-
-    public function books()
+    
+    public function trades()
     {
-        return $this->hasMany(Book::class, 'account_id');
+        return $this->hasMany(Trade::class, 'account_id');
     }
 
 }
