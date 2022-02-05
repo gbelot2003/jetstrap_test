@@ -28,10 +28,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function (){
 
-    Route::get('cuentas', [AccountController::class, 'index'])->name('account.index');
-    Route::post('cuentas', [AccountController::class, 'store'])->name('account.store');
-
-    Route::get('libro-mayor', [BookController::class, 'index'])->name('book.index');
 
     Route::get('users', [UserController::class, 'index'])->name('users.index');
 });
