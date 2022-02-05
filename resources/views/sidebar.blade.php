@@ -27,14 +27,44 @@
                                  with font-awesome or any other icon font library -->
 
                             <li class="nav-item">
-                                <a href="/docs/3.1//index.html" class="nav-link">
+                                <a href="/cuentas" class="nav-link">
                                     <i class="nav-icon fas fa-microchip"></i>
-                                    <p>Installation</p>
+                                    <p>Cuentas</p>
                                 </a>
                             </li>
 
+
                             <li class="nav-item">
-                                <a href="/docs/3.1//components" class="nav-link">
+                                <a href="#/" class="nav-link">
+                                    <i class="nav-icon fas fa-user"></i>
+                                    <p>
+                                        Cuentas
+                                        <i class="right fas fa-angle-left"></i>
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview">
+                                    
+                                    <li class="nav-item">
+                                        <a href="{{ route('account.index') }}" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Cuentas</p>
+                                        </a>
+                                    </li>
+
+                                    <li class="nav-item">
+                                        <a href="{{ route('book.index') }}" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Libro Mayor</p>
+                                        </a>
+                                    </li>
+
+
+                                </ul>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a href="#/" class="nav-link">
                                     <i class="nav-icon fas fa-user"></i>
                                     <p>
                                         Conf. de Usuarios
