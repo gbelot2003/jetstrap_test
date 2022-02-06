@@ -5,8 +5,31 @@
         </h2>
     </x-slot>
 
-
-
-
+    @livewire('accounts.create-accounts')
     
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($accounts as $row)
+                        <tr>
+                            <td>{{ $row->element->name }}</td>
+                            <td>{{ $row->element_id }} {{ $row->group_id }}</td>
+                            <td>{{ $row->name }}</td>
+                            <td>{{ $row->description }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
+    </div>
 </x-app-layout>

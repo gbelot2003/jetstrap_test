@@ -10,7 +10,13 @@ class Account extends Model
     use HasFactory;
 
 
-    protected $fillable = ['group_id', 'name', 'description'];
+    protected $fillable = ['group_id', 'element_id', 'name', 'description'];
+
+
+    public function element()
+    {
+        return $this->belongsTo(Element::class, 'element_id');
+    }
 
 
     public function group()
