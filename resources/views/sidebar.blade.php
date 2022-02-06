@@ -27,7 +27,7 @@
                                  with font-awesome or any other icon font library -->
 
                             <li class="nav-item">
-                                <a href="/#" class="nav-link">
+                                <a href="{{ route('account.index') }}" class="nav-link">
                                     <i class="nav-icon fas fa-microchip"></i>
                                     <p>Cuentas</p>
                                 </a>
