@@ -19,4 +19,11 @@ class AccountController extends Controller
     {
         return view('accounts.create');
     }
+
+
+    public function edit($id)
+    {
+        $account = Account::findOrFail($id);
+        return view('accounts.edit', compact('account'));
+    }
 }

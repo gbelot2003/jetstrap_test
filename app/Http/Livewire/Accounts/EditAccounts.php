@@ -7,7 +7,7 @@ use App\Models\Element;
 use App\Models\Group;
 use Livewire\Component;
 
-class CreateAccounts extends Component
+class EditAccounts extends Component
 {
 
     public Account $editing;
@@ -27,10 +27,15 @@ class CreateAccounts extends Component
         'editing.description' => 'nullable'
     ];
 
+    public function create(Account $account)
+    {
+        $this->editing = $account;
+
+    }
+
     public function mount()
     {
-        $this->editing = new Account();
-
+        $this->groups = Group::where('element_id', $this->editing->element_id)->get();
     }
 
 
@@ -45,12 +50,6 @@ class CreateAccounts extends Component
     public function clean()
     {
         $this->editing = new Account();
-    }
-
-
-    public function edit(Account $account)
-    {
-        $this->editing = $account;
     }
 
     public function save()
@@ -68,7 +67,8 @@ class CreateAccounts extends Component
         $this->accounts = Account::all();
 
         $grupos = $this->groups;
-        return view('livewire.accounts.create-accounts', [
+
+        return view('livewire.accounts.edit-accounts', [
             'elem' => $this->elements,
             'groups' => $grupos,
             'accounts' => $this->accounts,

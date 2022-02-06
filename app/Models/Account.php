@@ -17,7 +17,7 @@ class Account extends Model
     {
         parent::boot();
 
-        static::saving(function($query){
+        static::creating(function($query){
             $element = $query->element_id;
             $group = Group::where('id', $query->group_id)->first()->code;
 

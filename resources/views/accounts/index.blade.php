@@ -30,7 +30,9 @@
                             <td>{{ $row->element->name }}</td>
                             <td>{{ $row->group->name }}</td>
                             <td>{{ $row->code }}</td>
-                            <td>{{ $row->name }}</td>
+                            <td>
+                                <a href="{{ route('account.edit', $row->id) }}">{{ $row->name }}</a>
+                            </td>
                             <td>{{ $row->description }}</td>
 
                         </tr>
