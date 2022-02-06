@@ -13,4 +13,10 @@ class AccountController extends Controller
         $accounts = Account::all();
         return view('accounts.index', compact('accounts'));
     }
+
+
+    public function create()
+    {
+        return view('accounts.create');
+    }
 }

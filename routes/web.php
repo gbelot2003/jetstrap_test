@@ -32,4 +32,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function (){
     Route::get('users', [UserController::class, 'index'])->name('users.index');
 
     Route::get('accounts', [AccountController::class, 'index'])->name('account.index');
+    Route::get('accounts/create', [AccountController::class, 'create'])->name('account.create');
 });

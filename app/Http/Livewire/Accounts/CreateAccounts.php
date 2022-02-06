@@ -53,7 +53,7 @@ class CreateAccounts extends Component
         $this->editing->save();
         $this->resetErrorBag();
         $this->resetValidation();
-        $this->clean();
+        redirect()->to('/accounts');
     }
 
     public function render()
@@ -67,5 +67,7 @@ class CreateAccounts extends Component
             'groups' => $grupos,
             'accounts' => $this->accounts,
         ]);
+
+
     }
 }

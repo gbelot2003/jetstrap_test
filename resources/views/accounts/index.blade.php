@@ -3,13 +3,17 @@
         <h2 class="h4 font-weight-bold">
             {{ __('Cuentas') }}
         </h2>
-    </x-slot>
+        <div class="flex align-items-end">
+            <span class="float-right">
+                <a class="btn btn-primary" href="{{ route('account.create') }}">Crear Cuenta</a>
+            </span>
 
-    @livewire('accounts.create-accounts')
+        </div>
+
+    </x-slot>
 
     <div class="row">
         <div class="col-md-12">
-            <hr />
             <table class="table">
                 <thead>
                     <tr>
