@@ -17,11 +17,12 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>Tipo</th>
+                        <th>Elem.</th>
                         <th>Grupo</th>
                         <th>Código</th>
                         <th>Nombre</th>
                         <th>Descripción</th>
+                        <th>Tipo</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +35,7 @@
                                 <a href="{{ route('account.edit', $row->id) }}">{{ $row->name }}</a>
                             </td>
                             <td>{{ $row->description }}</td>
-
+                            <td>Tipo</td>
                         </tr>
                     @endforeach
                 </tbody>

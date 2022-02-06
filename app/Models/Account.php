@@ -10,8 +10,12 @@ class Account extends Model
     use HasFactory;
 
 
-    protected $fillable = ['group_id', 'element_id', 'reference_id', 'code', 'name', 'description'];
+    protected $fillable = ['group_id', 'element_id', 'reference_id', 'code', 'name', 'description', 'type_id'];
 
+    public const TYPE = [
+        'Contable' => 1,
+        'Sumaria' => 2
+    ];
 
     protected static function boot()
     {

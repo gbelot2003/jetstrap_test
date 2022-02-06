@@ -25,12 +25,12 @@ class CreateAccounts extends Component
         'editing.reference_id' => 'nullable',
         'editing.name' => 'required',
         'editing.description' => 'nullable'
+
     ];
 
     public function mount()
     {
         $this->editing = new Account();
-
     }
 
 

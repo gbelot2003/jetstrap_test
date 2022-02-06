@@ -17,6 +17,7 @@ class CreateAccountsTable extends Migration
             $table->id();
             $table->foreignId('element_id');
             $table->foreignId('group_id');
+            $table->smallInteger('type_id');
             $table->bigInteger('reference_id')->nullable();
             $table->bigInteger('code');
             $table->string('name');
