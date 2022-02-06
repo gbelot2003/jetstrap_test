@@ -15,9 +15,12 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('code')->unsigned();
-            $table->bigInteger('reference_id')->unsigned()->nullable();
+            $table->foreignId('element_id');
+            $table->foreignId('group_id');
+            $table->bigInteger('reference_id')->nullable();
+            $table->bigInteger('code');
             $table->string('name');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }

@@ -7,16 +7,16 @@ use Illuminate\Http\Request;
 
 class AccountController extends Controller
 {
+
     public function index()
     {
         $accounts = Account::all();
-        $sAccounts = Account::all()->pluck('name', 'id');
-        return view('accounts.index', compact('accounts', 'sAccounts'));
+        return view('accounts.index', compact('accounts'));
     }
 
-    public function store(Request $request)
+
+    public function create()
     {
-        $account = Account::create($request->all());
-        return redirect()->back();
+        return view('accounts.create');
     }
 }
