@@ -17,13 +17,11 @@ class Account extends Model
     {
         parent::boot();
 
-        static::creating(function($query){
-
+        static::saving(function($query){
             $element = $query->element_id;
-            $group = $query->group_id;
+            $group = Group::where('id', $query->group_id)->first()->code;
 
             if (!is_null($query->reference_id)){
-
                 $ref = Account::where('id', $query->reference_id)->first();
                 $groupCount = $ref->code;
 
@@ -46,7 +44,6 @@ class Account extends Model
                 $query->code = $element . $group . $groupCount;
             }
 
-
         });
     }
 
@@ -59,7 +56,7 @@ class Account extends Model
 
     public function group()
     {
-        return $this->belongsTo(Group::class, 'group_id', 'code');
+        return $this->belongsTo(Group::class, 'group_id', 'id');
     }
 
 
