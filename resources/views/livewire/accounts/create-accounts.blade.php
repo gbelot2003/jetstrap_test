@@ -15,7 +15,7 @@
             <select name="group" class="form-control" wire:model="editing.group_id">
                 <option class="" value="">Seleccione un Grupo</option>
                 @foreach ($groups as $row)
-                    <option value="{{ $row->id }}">{{ $row->name }}</option>
+                    <option value="{{ $row->code }}">{{ $row->name }}</option>
                 @endforeach
             </select>
         </div>

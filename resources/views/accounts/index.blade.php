@@ -14,6 +14,7 @@
                 <thead>
                     <tr>
                         <th>Tipo</th>
+                        <th>Grupo</th>
                         <th>Código</th>
                         <th>Nombre</th>
                         <th>Descripción</th>
@@ -23,6 +24,7 @@
                     @foreach ($accounts as $row)
                         <tr>
                             <td>{{ $row->element->name }}</td>
+                            <td>{{ $row->group->name }}</td>
                             <td>{{ $row->code }}</td>
                             <td>{{ $row->name }}</td>
                             <td>{{ $row->description }}</td>

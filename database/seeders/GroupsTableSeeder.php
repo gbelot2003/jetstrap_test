@@ -23,7 +23,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'element_id' => 1,
-                'code' => '11',
+                'code' => '1',
                 'name' => 'Circulante',
                 'description' => '',
             ),
@@ -31,7 +31,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 2,
                 'element_id' => 1,
-                'code' => '12',
+                'code' => '2',
                 'name' => 'Bancos',
                 'description' => '',
             ),
@@ -39,7 +39,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 3,
                 'element_id' => 1,
-                'code' => '13',
+                'code' => '3',
                 'name' => 'Cobros',
                 'description' => '',
             ),
@@ -47,7 +47,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 4,
                 'element_id' => 1,
-                'code' => '14',
+                'code' => '4',
                 'name' => 'Mercancia Consignada',
                 'description' => '',
             ),
@@ -55,7 +55,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 5,
                 'element_id' => 1,
-                'code' => '15',
+                'code' => '5',
                 'name' => 'Almacen',
                 'description' => '',
             ),
@@ -63,7 +63,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 6,
                 'element_id' => 1,
-                'code' => '16',
+                'code' => '6',
                 'name' => 'Edificios',
                 'description' => '',
             ),
@@ -71,7 +71,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 7,
                 'element_id' => 1,
-                'code' => '17',
+                'code' => '7',
                 'name' => 'Vehiculos',
                 'description' => '',
             ),
@@ -79,7 +79,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 8,
                 'element_id' => 2,
-                'code' => '21',
+                'code' => '1',
                 'name' => 'Pasivos a Corto Plazo',
                 'description' => '',
             ),
@@ -87,7 +87,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 9,
                 'element_id' => 2,
-                'code' => '22',
+                'code' => '2',
                 'name' => 'Pasivos a Largo Plazo',
                 'description' => '',
             ),
@@ -95,7 +95,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 10,
                 'element_id' => 2,
-                'code' => '23',
+                'code' => '3',
                 'name' => 'Prestamos',
                 'description' => '',
             ),
@@ -103,7 +103,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 11,
                 'element_id' => 2,
-                'code' => '24',
+                'code' => '4',
                 'name' => 'Salarios',
                 'description' => '',
             ),
@@ -111,7 +111,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 12,
                 'element_id' => 2,
-                'code' => '25',
+                'code' => '5',
                 'name' => 'Comisiones',
                 'description' => '',
             ),
@@ -119,7 +119,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 13,
                 'element_id' => 2,
-                'code' => '26',
+                'code' => '6',
                 'name' => 'Costos de Venta',
                 'description' => '',
             ),
@@ -127,7 +127,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 14,
                 'element_id' => 3,
-                'code' => '31',
+                'code' => '1',
                 'name' => 'Capital Contable',
                 'description' => '',
             ),
@@ -135,7 +135,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 15,
                 'element_id' => 3,
-                'code' => '32',
+                'code' => '2',
                 'name' => 'Capital Social',
                 'description' => '',
             ),
@@ -143,7 +143,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 16,
                 'element_id' => 3,
-                'code' => '33',
+                'code' => '3',
                 'name' => 'Reservas',
                 'description' => '',
             ),
@@ -151,7 +151,7 @@ class GroupsTableSeeder extends Seeder
             array (
                 'id' => 17,
                 'element_id' => 3,
-                'code' => '34',
+                'code' => '4',
                 'name' => 'Superavit',
                 'description' => '',
             ),
