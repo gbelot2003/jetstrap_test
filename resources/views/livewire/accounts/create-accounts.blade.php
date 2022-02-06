@@ -1,5 +1,5 @@
 <div>
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-md-3">
             <label for="element_id">Tipo</label>
             <select name="element" class="form-control" wire:model="editing.element_id">
@@ -21,11 +21,31 @@
         </div>
     </div>
 
-    <div class="row">
+
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <input type="checkbox" id="subcuenta" name="subcuenta" wire:model="subcuenta">
+                <label for="subcuenta">Sub Cuenta</label>
+            </input>
+        </div>
+        @if ($subcuenta)
+            <div class="col-md-3">
+                <label for="reference_id">SubCuenta de:</label>
+                <select name="references" class="form-control" wire:model="editing.reference_id">
+                    <option class="" value="">Seleccione una Referencia</option>
+                    @foreach ($accounts as $row)
+                        <option value="{{ $row->id }}">{{$row->group->name }} - {{ $row->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+        @endif
+    </div>
+
+    <div class="row mb-3">
         <br />
         <div class="col-md-6">
             <x-jet-label for="name" value="{{ __('Nombre') }}" />
-            <x-jet-input id="name" type="text" class="form-control" autofocus placeholder="name"
+            <x-jet-input id="name" type="text" class="form-control" autofocus placeholder="Nombre"
                 wire:model="editing.name" />
             <x-jet-input-error for="editing.name" class="mt-2" />
         </div>

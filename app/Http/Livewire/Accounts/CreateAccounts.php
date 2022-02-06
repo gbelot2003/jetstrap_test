@@ -13,14 +13,17 @@ class CreateAccounts extends Component
 {
 
     public Account $editing;
-    public $elements = [];  
+    public $elements = [];
     public $element;
     public $groups = [];
     public $group;
+    public $subcuenta = false;
+    public $accounts = [];
+
 
     public $rules = [
         'editing.element_id' => 'required',
-        'editing.group_id' => 'required', 
+        'editing.group_id' => 'required',
         'editing.reference_id' => 'nullable',
         'editing.name' => 'required',
         'editing.description' => 'nullable'
@@ -56,10 +59,13 @@ class CreateAccounts extends Component
     public function render()
     {
         $this->elements = Element::all();
+        $this->accounts = Account::all();
+
         $grupos = $this->groups;
         return view('livewire.accounts.create-accounts', [
             'elem' => $this->elements,
             'groups' => $grupos,
+            'accounts' => $this->accounts,
         ]);
     }
 }
