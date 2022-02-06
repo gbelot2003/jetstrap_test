@@ -10,7 +10,19 @@ class Account extends Model
     use HasFactory;
 
 
-    protected $fillable = ['group_id', 'element_id', 'name', 'description'];
+    protected $fillable = ['group_id', 'element_id', 'reference_id', 'code', 'name', 'description'];
+
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function($query){
+            $groupCount = $query->where('group_id', $query->group_id)->count();
+            $code = $query->element_id . $query->group_id . $query->reference_id .$groupCount;
+            $query->code = $code;
+        });
+    }
 
 
     public function element()
@@ -36,14 +48,4 @@ class Account extends Model
         return $this->belongsTo(Account::class, 'reference_id');
     }
 
-
-
-
-    public function getCodeAttribute()
-    {
-        $groupCount = $this->where('group_id', $this->group_id)->count();
-        $code = $this->element_id . $this->group_id . $this->reference_id .$groupCount;
-
-        return $code;
-    }
 }
