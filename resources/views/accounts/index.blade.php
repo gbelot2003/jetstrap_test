@@ -6,7 +6,7 @@
     </x-slot>
 
     @livewire('accounts.create-accounts')
-    
+
     <div class="row">
         <div class="col-md-12">
             <hr />
@@ -23,9 +23,10 @@
                     @foreach ($accounts as $row)
                         <tr>
                             <td>{{ $row->element->name }}</td>
-                            <td>{{ $row->element_id }} {{ $row->group_id }}</td>
+                            <td>{{ $row->code }}</td>
                             <td>{{ $row->name }}</td>
                             <td>{{ $row->description }}</td>
+
                         </tr>
                     @endforeach
                 </tbody>

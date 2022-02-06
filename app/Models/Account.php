@@ -24,7 +24,7 @@ class Account extends Model
         return $this->belongsTo(Group::class, 'group_id');
     }
 
-    
+
     public function father()
     {
         return $this->hasMany(Account::class, 'reference_id');
@@ -34,5 +34,16 @@ class Account extends Model
     public function child()
     {
         return $this->belongsTo(Account::class, 'reference_id');
+    }
+
+
+
+
+    public function getCodeAttribute()
+    {
+        $groupCount = $this->where('group_id', $this->group_id)->count();
+        $code = $this->element_id . $this->group_id . $this->reference_id .$groupCount;
+
+        return $code;
     }
 }
