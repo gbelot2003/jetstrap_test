@@ -42,6 +42,18 @@
     </div>
 
     <div class="row mb-3">
+        <div class="col-md-3">
+                <label for="type_id">Tipo de Cuenta:</label>
+                <select name="tipo" class="form-control" wire:model="editing.type_id">
+                    <option class="" value="">Que Tipo de Cuenta es?</option>
+                    @foreach ($types as $row)
+                        <option value="{{ $row->id }}">{{ $row->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+    </div>
+
+    <div class="row mb-3">
         <br />
         <div class="col-md-6">
             <x-jet-label for="name" value="{{ __('Nombre') }}" />

@@ -35,7 +35,7 @@
                                 <a href="{{ route('account.edit', $row->id) }}">{{ $row->name }}</a>
                             </td>
                             <td>{{ $row->description }}</td>
-                            <td>Tipo</td>
+                            <td>{{ $row->type->name }}</td>
                         </tr>
                     @endforeach
                 </tbody>

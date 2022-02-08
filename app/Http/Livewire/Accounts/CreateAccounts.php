@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Accounts;
 use App\Models\Account;
 use App\Models\Element;
 use App\Models\Group;
+use App\Models\Type;
 use Livewire\Component;
 
 class CreateAccounts extends Component
@@ -24,8 +25,8 @@ class CreateAccounts extends Component
         'editing.group_id' => 'required',
         'editing.reference_id' => 'nullable',
         'editing.name' => 'required',
-        'editing.description' => 'nullable'
-
+        'editing.description' => 'nullable',
+        'editing.type_id' => 'required',
     ];
 
     public function mount()
@@ -72,6 +73,7 @@ class CreateAccounts extends Component
             'elem' => $this->elements,
             'groups' => $grupos,
             'accounts' => $this->accounts,
+            'types' => Type::all(),
         ]);
 
 
