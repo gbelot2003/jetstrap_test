@@ -12,11 +12,6 @@ class Account extends Model
 
     protected $fillable = ['group_id', 'element_id', 'reference_id', 'code', 'name', 'description', 'type_id'];
 
-    public const TYPE = [
-        'Contable' => 1,
-        'Sumaria' => 2
-    ];
-
     protected static function boot()
     {
         parent::boot();
@@ -73,6 +68,12 @@ class Account extends Model
     public function child()
     {
         return $this->belongsTo(Account::class, 'reference_id');
+    }
+
+
+    public function type()
+    {
+        return $this->belongsTo(Type::class, 'type_id');
     }
 
 }
