@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(200)->create();     
         $this->call(ElementsTableSeeder::class);
         $this->call(GroupsTableSeeder::class);
+        $this->call(TypesTableSeeder::class);
     }
 }
