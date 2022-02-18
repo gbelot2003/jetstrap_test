@@ -7,9 +7,7 @@
             <span class="float-right">
                 <a class="btn btn-primary" href="{{ route('book.create') }}">Nuevo Registro</a>
             </span>
-
         </div>
-
     </x-slot>
 
     <div class="row">
@@ -20,7 +18,6 @@
                     <th>Nombre</th>
                     <th>Descripcion</th>
                     <th>Fecha</th>
-                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -29,10 +26,9 @@
                         <td>{{ $row->id }}</td>
                         <td>{{ $row->name }}</td>
                         <td>{{ $row->description }}</td>
-                        <td>{{ $row->created_at }}</td>
+                        <td>{{ $row->created_at->format('d/m/Y') }}</td>
                         @foreach ($row->transaction as $trans)
                             <tr style="background-color: rgb(214, 202, 202)">
-                                <td></td>
                                 <td></td>
                                 <td>{{ $trans->account->code }}</td>
                                 <td>{{ $trans->account->name }}</td>
@@ -45,6 +41,5 @@
             </tbody>
         </table>
         {{ $registers->links() }}
-
     </div>
 </x-app-layout>
