@@ -21,7 +21,7 @@
     </head>
     <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed font-sans antialiased">
         <div class="wrapper">
-            
+
             <!-- Navbar -->
             @livewire('navigation-menu')
             <!-- /.navbar -->
