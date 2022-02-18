@@ -66,7 +66,7 @@ class CreateAccounts extends Component
     public function render()
     {
         $this->elements = Element::all();
-        $this->accounts = Account::all();
+        $this->accounts = Account::where('type_id', "=", '2')->get();
 
         $grupos = $this->groups;
         return view('livewire.accounts.create-accounts', [
