@@ -76,4 +76,10 @@ class Account extends Model
         return $this->belongsTo(Type::class, 'type_id');
     }
 
+
+    public function transaction()
+    {
+        return $this->hasMany(AccountBook::class. 'account_id', 'id');
+    }
+
 }

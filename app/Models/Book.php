@@ -11,5 +11,11 @@ class Book extends Model
 
     protected $fillable = ['name', 'description', 'date'];
 
-
+    /**
+     * Relación con AccountBook
+     */
+    public function transaction()
+    {
+        return $this->hasMany(AccountBook::class, 'book_id', 'id');
+    }
 }
