@@ -16,6 +16,7 @@ class BookController extends Controller
     public function index()
     {
         //Listado de movimientos
+        return view('book.index');
     }
 
     /**

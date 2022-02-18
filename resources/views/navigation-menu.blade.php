@@ -10,7 +10,7 @@
         </x-jet-nav-link>
 
         <!-- Links here -->
-        
+
         <!-- Links here -->
     </ul>
 

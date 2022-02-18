@@ -7,7 +7,7 @@
 
                 <!-- Sidebar -->
                 <div class="sidebar">
-                    <!-- Sidebar user (optional) 
+                    <!-- Sidebar user (optional)
                     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                         @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
                             <div class="image">
@@ -30,6 +30,13 @@
                                 <a href="{{ route('account.index') }}" class="nav-link">
                                     <i class="nav-icon fas fa-microchip"></i>
                                     <p>Cuentas</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{ route('book.index') }}" class="nav-link">
+                                    <i class="nav-icon fas fa-microchip"></i>
+                                    <p>Librro Mayor</p>
                                 </a>
                             </li>
 

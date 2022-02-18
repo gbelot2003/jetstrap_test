@@ -14,12 +14,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('users')->delete();
-        
+
         \DB::table('users')->insert(array (
-            0 => 
+            0 =>
             array (
                 'id' => 24,
                 'name' => 'Gerardo Belot',
@@ -30,12 +30,12 @@ class UsersTableSeeder extends Seeder
                 'two_factor_recovery_codes' => NULL,
                 'remember_token' => NULL,
                 'current_team_id' => NULL,
-                'profile_photo_path' => 'profile-photos/iSRokLswwgOCQWdzgJz9VAHVzpFxPX4KcZVJXpPK.jpg',
+                'profile_photo_path' => 'profile-photos/CtsJPVXhOfybJupfgqI1MG23479am1gqgEqpg7Di.png',
                 'created_at' => '2022-02-02 07:31:35',
                 'updated_at' => '2022-02-02 07:52:11',
             ),
         ));
-        
-        
+
+
     }
 }

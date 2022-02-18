@@ -5,6 +5,6 @@
         </h2>
     </x-slot>
 
-    @livewire('books.book-register')
+   {{-- @livewire('books.book-register') --}}
 
 </x-app-layout>
