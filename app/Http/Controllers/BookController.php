@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
+use App\Models\AccountBook;
 
 class BookController extends Controller
 {
@@ -15,8 +16,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        //Listado de movimientos
-        return view('book.index');
+        $registers = Book::orderBy('id', 'DESC')->paginate(10);
+        return view('book.index', compact('registers'));
     }
 
     /**
@@ -26,7 +27,7 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
+        return view('book.create');
     }
 
     /**
