@@ -19,11 +19,11 @@
         </div>
     </fieldset>
     @if ($this->inputs)
-        <fieldset class="col-mb-12 mb-3" style="border: 0.5px dotted gray; padding-left:16px; padding-top: 10px">
+        <fieldset class="col-md-12 mb-3" style="border: 0.5px dotted gray; padding-left:16px; padding-top: 10px">
             @foreach ($this->inputs as $key => $item)
                 <div class="row">
                     <div class="col-md-5 mb-2">
-                        <select class="form-control" wire:model="inputs.{{ $key }}.account">
+                        <select class="form-control" wire:model="inputs.{{ $key }}.account_id">
                             <option value="">Seleccione una cuenta</option>
                             @foreach ($accounts as $value => $item)
                                 <option value="{{ $item->id }}">{{ $item->name }}</option>
@@ -32,11 +32,11 @@
 
                     </div>
                     <div class="col-md-3 mb-2">
-                        <input type="number" wire:model="inputs.{{ $key }}.debit" class="form-control"
+                        <input type="number" wire:model="inputs.{{ $key }}.debit" value="0" class="form-control"
                             placeholder="Debe">
                     </div>
                     <div class="col-md-3 mb-2">
-                        <input type="number" wire:model="inputs.{{ $key }}.credit" class="form-control"
+                        <input type="number" wire:model="inputs.{{ $key }}.credit" value="0" class="form-control"
                             placeholder="Haber">
                     </div>
                     <div class="col-md-1">
@@ -44,10 +44,19 @@
                     </div>
                 </div>
             @endforeach
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-3 mb-2">{{ $debitTotal }}</div>
+                <div class="col-md-3 mb-2">{{ $creditTotal }}</div>
+
+            </div>
         </fieldset>
     @endif
     <div class="col-md-12">
-        <button wire:click="save" class="btn btn-primary">Guardar</button>
+        @if ($debitTotal == $creditTotal)
+            <button wire:click="save" class="btn btn-primary">Guardar</button>
+        @endif
+
     </div>
 
 </div>

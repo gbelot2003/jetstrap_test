@@ -36,7 +36,7 @@
                             <li class="nav-item">
                                 <a href="{{ route('book.index') }}" class="nav-link">
                                     <i class="nav-icon fas fa-microchip"></i>
-                                    <p>Librro Mayor</p>
+                                    <p>Librro Diario</p>
                                 </a>
                             </li>
 
