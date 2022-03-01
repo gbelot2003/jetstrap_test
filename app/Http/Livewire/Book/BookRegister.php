@@ -48,7 +48,6 @@ class BookRegister extends Component
     }
 
 
-
     public $rules = [
         'book.name' => 'required',
         'book.description' => 'nullable',
@@ -56,6 +55,8 @@ class BookRegister extends Component
         'inputs.*.account_id' => 'required',
         'inputs.*.credit' => 'required',
         'inputs.*.debit' => 'required',
+        'debitTotal' => 'required',
+        'creditTotal' => 'required|same:debitTotal'
     ];
 
     public function save()

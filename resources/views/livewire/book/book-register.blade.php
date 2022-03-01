@@ -1,5 +1,6 @@
 <div class="row">
     <fieldset class="col-md-12">
+
         <legend>Transacción</legend>
         <div class="col-md-12 mb-3">
             <input type="text" name="name" placeholder="Nombre" class="form-control" wire:model="book.name">
@@ -46,17 +47,20 @@
             @endforeach
             <div class="row">
                 <div class="col-md-5"></div>
-                <div class="col-md-3 mb-2">{{ $debitTotal }}</div>
-                <div class="col-md-3 mb-2">{{ $creditTotal }}</div>
+                <div class="text-info col-md-3 mb-2">
+                    <input type="number" wire:model="debitTotal" value="0" class="form-control"
+                    placeholder="Haber" disabled>
+                </div>
+                <div class="text-danger col-md-3 mb-2">
+                    <input type="number" wire:model="creditTotal" value="0" class="form-control"
+                    placeholder="Haber" disabled>
+                </div>
 
             </div>
         </fieldset>
     @endif
     <div class="col-md-12">
-        @if ($debitTotal == $creditTotal)
             <button wire:click="save" class="btn btn-primary">Guardar</button>
-        @endif
-
     </div>
 
 </div>
