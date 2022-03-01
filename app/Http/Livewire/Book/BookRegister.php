@@ -37,10 +37,6 @@ class BookRegister extends Component
         ];
     }
 
-    public function updatedInputs()
-    {
-    }
-
     public function remove($index)
     {
         unset($this->inputs[$index]);
